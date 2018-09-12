@@ -1,5 +1,5 @@
 import {Entity, PrimaryGeneratedColumn, Column, OneToOne, OneToMany, JoinColumn} from "typeorm";
-import {Login} from './Login';
+import {Auth} from './Auth'
 import {UserPhoto} from './UserPhoto';
 
 @Entity()
@@ -26,9 +26,9 @@ export class User {
     @Column({type: 'timestamp'})
     last_login: Date;
 
-    @OneToOne(type => Login, login => login.user)
+    @OneToOne(type => Auth, auth => auth.user)
     @JoinColumn()
-    login: Login;
+    auth: Auth;
 
     @OneToMany(type => UserPhoto, userPhoto => userPhoto.user)
     userPhotos: UserPhoto[];

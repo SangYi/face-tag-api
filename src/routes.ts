@@ -13,6 +13,11 @@ export const Routes = [
         route: "/login",
         controller: AuthController,
         action: "handleLogin"
+    }, {
+        method: "get",
+        route: "/auths",
+        controller: AuthController,
+        action: "all"
     },
 
     //User

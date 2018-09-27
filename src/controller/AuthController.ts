@@ -25,13 +25,13 @@ export class AuthController {
         }
         const hash = bcrypt.hashSync(password, 10);
         
-        await getConnection().transaction(async trxEntityManager => {
-            await trxEntityManager.save(trxEntityManager.create(Auth, {
+        await getConnection().transaction(async trxManager => {
+            await trxManager.save(trxManager.create(Auth, {
                 hash,
                 email,
                 username
             }));
-            const userRes = await trxEntityManager.save(trxEntityManager.create(User, {
+            const userRes = await trxManager.save(trxManager.create(User, {
                 firstName,
                 lastName,
                 username,

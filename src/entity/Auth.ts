@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToOne} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn} from "typeorm";
 import {User} from './User';
 
 @Entity()
@@ -17,5 +17,6 @@ export class Auth {
     hash: string;
 
     @OneToOne(type => User, user => user.auth)
+    @JoinColumn()
     user: User;
 }

@@ -12,6 +12,7 @@
    "dependencies": {
       "bcrypt": "^3.0.0",
       "body-parser": "^1.18.1",
+      "clarifai": "^2.8.1",
       "cors": "^2.8.4",
       "express": "^4.15.4",
       "pg": "^7.3.0",

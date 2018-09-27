@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToOne, OneToMany, JoinColumn} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToOne, OneToMany} from "typeorm";
 import {Auth} from './Auth'
 import {UserPhoto} from './UserPhoto';
 
@@ -27,7 +27,6 @@ export class User {
     last_login: Date;
 
     @OneToOne(type => Auth, auth => auth.user)
-    @JoinColumn()
     auth: Auth;
 
     @OneToMany(type => UserPhoto, userPhoto => userPhoto.user)

@@ -9,7 +9,7 @@ export class Photo {
     id: number;
 
     @Column()
-    url: string;
+    imageUrl: string;
 
     @Column()
     photoOwner: string;
@@ -17,6 +17,6 @@ export class Photo {
     @OneToMany(type => UserPhoto, userPhoto => userPhoto.photo)
     userPhotos: UserPhoto[];
 
-    @OneToMany(type => Face, face => face.photo)
+    @OneToMany(type => Face, face => face.photoId)
     faces: Face[];
 }

@@ -1,4 +1,5 @@
 import {AuthController} from "./controller/AuthController";
+import {PhotoController} from "./controller/PhotoController";
 import {UserController} from "./controller/UserController";
 
 export const Routes = [
@@ -19,7 +20,13 @@ export const Routes = [
         controller: AuthController,
         action: "all"
     },
-
+    // PHOTO
+    {
+        method: "post",
+        route: "/imageurl",
+        controller: PhotoController,
+        action: "handleSubmitImage"
+    },
     //User
     {
         method: "get",

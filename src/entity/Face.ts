@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, ManyToOne} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn} from "typeorm";
 import {Photo} from './Photo';
 
 @Entity()
@@ -19,6 +19,7 @@ export class Face {
     @Column()
     leftFrame: string;
 
-    @ManyToOne(type => Photo, photo => photo.faces)
-    photo: Photo; 
+    @ManyToOne(type => Photo, photo => photo.faces, {nullable: false})
+    @JoinColumn({name: "photoId"})
+    photoId: Photo; 
 }
